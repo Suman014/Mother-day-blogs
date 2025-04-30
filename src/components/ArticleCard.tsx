@@ -1,4 +1,4 @@
-import { Article } from '@/data/articles';
+import { Article } from '@/types/article';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -11,7 +11,7 @@ export default function ArticleCard({ article }: ArticleCardProps) {
     <div className="bg-card-bg rounded-lg shadow-sm overflow-hidden card-hover card-border">
       <div className="relative h-48">
         <Image
-          src={article.imageUrl}
+          src={article.image}
           alt={article.title}
           fill
           className="object-cover"
@@ -21,7 +21,7 @@ export default function ArticleCard({ article }: ArticleCardProps) {
       <div className="p-5">
         <div className="flex items-center gap-2 mb-3">
           <span className="tag tag-primary">
-            {article.readingTime} min read
+            {article.readTime}
           </span>
           <span className="tag tag-secondary">
             {article.category}
