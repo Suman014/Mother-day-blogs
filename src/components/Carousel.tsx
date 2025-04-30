@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Article } from '@/data/articles';
+import { Article } from '@/types/article';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -26,7 +26,7 @@ export default function Carousel({ articles }: CarouselProps) {
     <div className="relative w-full h-[600px] overflow-hidden">
       <div className="relative w-full h-full">
         <Image
-          src={articles[currentIndex].imageUrl}
+          src={articles[currentIndex].image}
           alt={articles[currentIndex].title}
           fill
           className="object-cover"
